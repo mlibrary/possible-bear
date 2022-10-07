@@ -1,0 +1,34 @@
+{
+  "name": "possible-bear",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass $* src/css/.:dist/.",
+    "build:js": "npm run lint -- --fix",
+    "lint": "npx eslint $* src/js/**/*.js spec/**/*.js",
+    "test": "npm run lint && mocha --recursive 'spec/**/*.spec.js'",
+    "watch": "npm run build:css -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlibrary/possible-bear.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlibrary/possible-bear/issues"
+  },
+  "homepage": "https://github.com/mlibrary/possible-bear#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.23.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "jsdom": "^20.0.0",
+    "mocha": "^10.0.0",
+    "sass": "^1.54.9"
+  }
+}
